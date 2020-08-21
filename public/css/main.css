@@ -1,0 +1,169 @@
+body{
+    background-color: lightgray;
+    color: black;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.Container{
+    display: flex;
+}
+.MissionList{
+    margin: 5px;
+    padding-inline-start: 25px;
+}
+.CardText,.CardHeading{
+    font-weight: bold;
+    margin-top: 15px;
+}
+.CardValue{
+    font-weight: normal;
+}
+.CardValue,.CardHeading{
+    color: #535490;
+}
+
+.FilterContainer{
+    min-width: 160px;
+    padding: 5px;
+}
+.CardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+.Card{
+    padding: 15px;
+    width: 230px;
+    margin: 0px 0px 15px 15px;
+}
+.FilterContainer,.Card{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 6px;
+    box-sizing: border-box;
+    height: fit-content;
+}
+.Heading{
+    font-weight: bold;
+}
+.SubHeading{
+    text-align: center;
+    margin-top: 8px;
+    font-size: 13px;
+}
+.YearBtn{
+    background-color: #c5e09a;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+.ImageStyle{
+    background-color: lightgray;
+    width:200px ;
+    margin: auto;
+}
+input:checked+.YearBtn{
+    background-color: #7bba02;
+}
+.Line{
+    width: 75%;
+    margin-top: 2px;
+}
+.GridContainer{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 16px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px;
+    padding-top: 0px;
+    margin-top: -10px;
+}
+.sort-loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #c5e09a;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    position: fixed;
+    top: 45%;
+    left: 50%;
+}
+
+.loadingAnimImage {
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+    position: fixed;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    opacity: .3;
+    overflow-x: hidden;
+}
+.DeveloperTag{
+    text-align: center;
+    font-weight: bold;
+    margin-top:15px;
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@media only screen
+and (min-device-width : 1024px)  {
+    .FilterContainer{
+        width:160px;
+    }
+}
+@media only screen
+and (min-device-width : 700px) and (max-device-width : 1024px)  {
+    .FilterContainer{
+        width:33%;
+    }
+    .CardContainer{
+        flex:33%
+    }
+    .GridContainer{
+        padding-top: 10px;
+        margin-top: 0px;
+    }
+}
+@media only screen
+and (max-device-width : 700px) {
+    .FilterContainer{
+        width:100%;
+    }
+    .Container{
+        flex-wrap: wrap;
+    }
+    .CardContainer{
+        margin-top: 20px;
+    }
+    .Card{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .GridContainer{
+        padding-top: 10px;
+         margin-top: 0px;
+    }
+    .sort-loader{
+        position: relative;
+        left: 40%;
+        margin: 20% 0px 20%;
+    }
+}
