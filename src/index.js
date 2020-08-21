@@ -11,7 +11,7 @@ const compression = require('compression');
 
 const app=express();
 
-// app.use(compression());
+app.use(compression());
 
 
 app.use(express.static('public'));
@@ -22,7 +22,7 @@ app.get('*',(req,res)=>{
             res.send(renderer(req,store));
         })
 })
-
-app.listen(3000,()=>{
-    console.log('Listening to port 3000')
+const PORT = process.env.PORT || 3000;
+app.listen(PORT,()=>{
+    console.log('Listening to port '+PORT)
 })
