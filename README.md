@@ -15,5 +15,5 @@ $ npm install
 $ npm run dev
 ```
 ## Lighthouse Screenshots
-![Lighthouse screenshot](https://https://github.com/vishnushenoy/SpaceXstats/edit/master/Screenshot/Lighthouse.png)
+![Lighthouse screenshot](https://github.com/vishnushenoy/SpaceXstats/edit/master/Screenshot/Lighthouse.png)
 
