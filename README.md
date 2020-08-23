@@ -14,6 +14,10 @@ $ npm install
 ```bash
 $ npm run start
 ```
+3. Inorder to rebuild the bundles and start server run the following command.
+```bash
+$ npm run dev
+```
 ## Lighthouse Screenshots
 ![Lighthouse screenshot](/Screenshot/Lighthouse.png)
 
