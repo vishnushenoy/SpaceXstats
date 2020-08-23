@@ -10,9 +10,9 @@ https://young-sea-38915.herokuapp.com/
 ```bash
 $ npm install
 ```
-2. Run the command to build the bundles and starting the server locally.
+2. Run the command to start the server locally.
 ```bash
-$ npm run dev
+$ npm run start
 ```
 ## Lighthouse Screenshots
 ![Lighthouse screenshot](/Screenshot/Lighthouse.png)
