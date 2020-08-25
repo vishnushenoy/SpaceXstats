@@ -50,12 +50,18 @@ class HomeContainer extends React.PureComponent{
                     vars[key] = [].concat(vars[key], decodeURIComponent(value));
                 }
             });
-        year=Number(vars.year)
-        isLaunched=(vars.isLaunched=="true")?1:0;
-        isLanded=(vars.isLanded=="true")?1:0;
+        if(vars.year!==undefined&&vars.year!==null){
+            year=Number(vars.year)
+        }
+        if(vars.isLaunched!==undefined&&vars.isLaunched!==null){
+            isLaunched=(vars.isLaunched=="true")?true:false;
+        }
+        if(vars.isLanded!==undefined&&vars.isLanded!==undefined){
+            isLanded=(vars.isLanded=="true")?true:false;
+        }
     };
     componentDidMount() {
-        console.log(this.getParameter())
+        this.getParameter()
         this.props.fetchShips(year,isLaunched,isLanded);
     }
     handleYearChange(e){
@@ -64,13 +70,12 @@ class HomeContainer extends React.PureComponent{
         this.props.fetchShips(year,isLaunched,isLanded);
     }
     handleLaunchFilterChange(e){
-        isLaunched=Boolean(Number(e.target.value))
+        isLaunched=(Number(e.target.value))==1?true:false
         this.setParameter("isLaunched",isLaunched)
         this.props.fetchShips(year,isLaunched,isLanded);
     }
     handleLandFilterChange(e){
-        isLaunched=true;
-        isLanded=Boolean(Number(e.target.value))
+        isLanded=(Number(e.target.value))==1?true:false;
         this.setParameter("isLanded",isLanded)
         this.props.fetchShips(year,isLaunched,isLanded);
     }
@@ -85,7 +90,7 @@ class HomeContainer extends React.PureComponent{
                 </Helmet>
                 <h1>SpaceX Launch Programs</h1>
                 <div className='Container'>
-                    <Filter handleYearChange={this.handleYearChange} handleLaunchFilterChange={this.handleLaunchFilterChange} handleLandFilterChange={this.handleLandFilterChange} />
+                    <Filter year={year} isLanded={isLanded} isLaunched={isLaunched} handleYearChange={this.handleYearChange} handleLaunchFilterChange={this.handleLaunchFilterChange} handleLandFilterChange={this.handleLandFilterChange} />
                     <div className='CardContainer'>
                         {this.props.ships.map((item)=>{
                             return(<SpaceShipCard key={item.flight_number} SpaceShip={item}/>)
