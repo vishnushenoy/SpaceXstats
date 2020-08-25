@@ -10,10 +10,14 @@ https://young-sea-38915.herokuapp.com/
 ```bash
 $ npm install
 ```
-2. Run the command to build the bundles and starting the server locally.
+2. Run the command to start the server locally.
+```bash
+$ npm run start
+```
+3. Inorder to rebuild the bundles and start server run the following command.
 ```bash
 $ npm run dev
 ```
 ## Lighthouse Screenshots
-![Lighthouse screenshot](https://https://github.com/vishnushenoy/SpaceXstats/edit/master/Screenshot/Lighthouse.png)
+![Lighthouse screenshot](/Screenshot/Lighthouse.png)
 
