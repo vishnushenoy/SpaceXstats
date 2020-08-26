@@ -7,8 +7,9 @@ export default class SpaceShipCard extends React.PureComponent{
     render(){
         return(
             <div className='Card'>
-                <img className='ImageStyle' ref="MissionPatchImg" src={this.props.SpaceShip.links.mission_patch_small} alt={this.props.SpaceShip.mission_name+" Mission Patch"}
-                     />
+                <div className='ImageStyle'>
+                    <img ref="MissionPatchImg" src={this.props.SpaceShip.links.mission_patch_small} alt={this.props.SpaceShip.mission_name+" Mission Patch"} />
+                </div>
                 <div className='CardHeading'>{this.props.SpaceShip.mission_name} #{this.props.SpaceShip.flight_number}</div>
                 <div className='CardText'>Mission Ids:
                     {this.props.SpaceShip.mission_id.length > 0 ? <ul className='MissionList'>

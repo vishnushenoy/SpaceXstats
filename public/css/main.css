@@ -67,6 +67,7 @@ body{
 .ImageStyle{
     background-color: lightgray;
     width: 100%;
+    text-align: center;
 }
 input:checked+.YearBtn {
      background-color: #7bba02;
@@ -131,8 +132,5 @@ input:checked+.YearBtn {
     }
     .GridContainer{
         column-gap: 35px;
-    }
-    .ImageStyle{
-        margin: auto;
     }
 }
