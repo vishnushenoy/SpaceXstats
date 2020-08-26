@@ -19,7 +19,7 @@ export default class SpaceShipCard extends React.PureComponent{
                     </ul>:<span className='CardValue'>NA</span>
                     }
                 </div>
-                <div className='CardText'>Launch Year: <span className='CardValue'>{this.props.SpaceShip.launch_year}</span></div>
+                <div className='CardText' style={this.props.SpaceShip.mission_id.length>0?{marginTop:'5px'}:{}}>Launch Year: <span className='CardValue'>{this.props.SpaceShip.launch_year}</span></div>
                 <div className='CardText'>Successful Launch:  <span className='CardValue'>{(this.props.SpaceShip.launch_success)?"True":"False"}</span></div>
                 <div className='CardText'>Successful Landing:  <span className='CardValue'>{(!this.props.SpaceShip.rocket.first_stage.cores[0].land_success)?'NA':
                     (this.props.SpaceShip.rocket.first_stage.cores[0].land_success)?"True":"False"}</span></div>
