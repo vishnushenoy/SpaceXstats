@@ -30,9 +30,10 @@ body{
     padding: 15px;
 }
 .CardContainer{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     font-size: 14px;
+    max-width: 1440px;
 }
 .FilterContainer{
     display: flex;
@@ -47,9 +48,8 @@ body{
     background-color: white;
     border-radius: 6px;
     padding: 20px;
-    width: 200px;
     margin: 0px 0px 15px 15px;
-    height: 405px;
+    box-sizing: border-box;
 }
 .Heading{
     font-weight: bold;
@@ -66,8 +66,7 @@ body{
 }
 .ImageStyle{
     background-color: lightgray;
-    width: 200px;
-    height: 200px;
+    width: 100%;
 }
 input:checked+.YearBtn {
      background-color: #7bba02;
@@ -93,19 +92,24 @@ input:checked+.YearBtn {
     font-weight: bold;
     margin-top:15px;
 }
+@media (min-width:1440px){
+    .CardContainer{
+        margin: 0px auto;
+    }
+}
 @media (min-width : 1024px)  {
     .FilterContainer{
         width:180px;
         flex-shrink: 0;
     }
 }
-@media (min-width : 700px) and (max-width : 1024px)  {
+@media (min-width : 700px) and (max-width : 1023px)  {
     .FilterContainer{
         width:180px;
         flex-shrink: 0;
     }
     .CardContainer{
-        flex:33%
+        grid-template-columns: auto auto;
     }
 }
 @media (max-width : 700px) {
@@ -116,11 +120,14 @@ input:checked+.YearBtn {
         flex-wrap: wrap;
     }
     .CardContainer{
+        display: flex;
+        flex-wrap: wrap;
         margin-top: 20px;
     }
     .Card{
         width: 100%;
         margin-left: 0px;
+        height: auto;
     }
     .GridContainer{
         column-gap: 35px;
